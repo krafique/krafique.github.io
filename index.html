@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Khurram Rafique — AI Portfolio</title>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg: #f9f9f7;
+      --surface: #ffffff;
+      --text: #1a1a1a;
+      --muted: #6b6b6b;
+      --accent: #1a1a1a;
+      --border: #e8e8e4;
+      --tag-bg: #f0f0ec;
+    }
+
+    body {
+      font-family: 'DM Sans', sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      font-weight: 300;
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* ── Header ── */
+    header {
+      max-width: 760px;
+      margin: 0 auto;
+      padding: 80px 32px 56px;
+      border-bottom: 1px solid var(--border);
+      animation: fadeUp 0.7s ease both;
+    }
+
+    .eyebrow {
+      font-size: 11px;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: 20px;
+    }
+
+    h1 {
+      font-family: 'DM Serif Display', serif;
+      font-size: clamp(2.2rem, 5vw, 3.2rem);
+      font-weight: 400;
+      line-height: 1.15;
+      letter-spacing: -0.01em;
+      margin-bottom: 20px;
+    }
+
+    .bio {
+      font-size: 1rem;
+      color: var(--muted);
+      max-width: 560px;
+      line-height: 1.75;
+      margin-bottom: 32px;
+    }
+
+    .links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      align-items: center;
+    }
+
+    .links a {
+      font-size: 13px;
+      font-weight: 500;
+      color: var(--text);
+      text-decoration: none;
+      letter-spacing: 0.02em;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      transition: opacity 0.2s;
+    }
+
+    .links a:hover { opacity: 0.5; }
+
+    .links a svg {
+      width: 14px;
+      height: 14px;
+      flex-shrink: 0;
+    }
+
+    /* ── Main ── */
+    main {
+      max-width: 760px;
+      margin: 0 auto;
+      padding: 64px 32px 120px;
+    }
+
+    .section-label {
+      font-size: 11px;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: 32px;
+    }
+
+    /* ── Cards ── */
+    .reports {
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+    }
+
+    .card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 32px;
+      transition: box-shadow 0.25s ease, transform 0.25s ease;
+      animation: fadeUp 0.6s ease both;
+    }
+
+    .card:hover {
+      box-shadow: 0 8px 32px rgba(0,0,0,0.07);
+      transform: translateY(-2px);
+    }
+
+    .card + .card { margin-top: 12px; }
+
+    .card-number {
+      font-size: 11px;
+      letter-spacing: 0.14em;
+      color: var(--muted);
+      margin-bottom: 10px;
+    }
+
+    .card h2 {
+      font-family: 'DM Serif Display', serif;
+      font-size: 1.2rem;
+      font-weight: 400;
+      line-height: 1.35;
+      margin-bottom: 10px;
+      letter-spacing: -0.01em;
+    }
+
+    .card p {
+      font-size: 0.9rem;
+      color: var(--muted);
+      line-height: 1.7;
+      margin-bottom: 20px;
+    }
+
+    .tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin-bottom: 20px;
+    }
+
+    .tag {
+      font-size: 11px;
+      font-weight: 500;
+      letter-spacing: 0.04em;
+      background: var(--tag-bg);
+      color: var(--muted);
+      padding: 4px 10px;
+      border-radius: 100px;
+    }
+
+    .card-links {
+      display: flex;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+
+    .card-links a {
+      font-size: 12px;
+      font-weight: 500;
+      letter-spacing: 0.04em;
+      color: var(--text);
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      gap: 5px;
+      border-bottom: 1px solid var(--border);
+      padding-bottom: 1px;
+      transition: border-color 0.2s, opacity 0.2s;
+    }
+
+    .card-links a:hover { opacity: 0.5; border-color: transparent; }
+
+    /* ── Footer ── */
+    footer {
+      text-align: center;
+      padding: 40px 32px;
+      font-size: 12px;
+      color: var(--muted);
+      border-top: 1px solid var(--border);
+    }
+
+    /* ── Animation ── */
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(18px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    .card:nth-child(1) { animation-delay: 0.05s; }
+    .card:nth-child(2) { animation-delay: 0.12s; }
+    .card:nth-child(3) { animation-delay: 0.19s; }
+    .card:nth-child(4) { animation-delay: 0.26s; }
+    .card:nth-child(5) { animation-delay: 0.33s; }
+
+    @media (max-width: 600px) {
+      header, main { padding-left: 20px; padding-right: 20px; }
+      header { padding-top: 52px; }
+      .card { padding: 24px; }
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <p class="eyebrow">AI Research Portfolio</p>
+  <h1>Khurram Rafique</h1>
+  <p class="bio">
+    AI product executive and MIT Sloan MBA completing an MS in Artificial Intelligence at UT Austin.
+    20+ years building and commercializing AI-driven platforms across insurtech, mobile, XR, and media.
+    These reports reflect hands-on technical work at the intersection of my executive background and graduate AI research.
+  </p>
+  <div class="links">
+    <a href="https://www.linkedin.com/in/krafique" target="_blank">
+      <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+      LinkedIn
+    </a>
+    <a href="https://worldmodels.substack.com" target="_blank">
+      <svg viewBox="0 0 24 24" fill="currentColor"><path d="M22.539 8.242H1.46V5.406h21.08v2.836zM1.46 10.812V24L12 18.11 22.54 24V10.812H1.46zM22.54 0H1.46v2.836h21.08V0z"/></svg>
+      World Models — Substack
+    </a>
+    <a href="mailto:khurram.rafique@alum.mit.edu">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+      khurram.rafique@alum.mit.edu
+    </a>
+  </div>
+</header>
+
+<main>
+  <p class="section-label">Graduate Research — MS Artificial Intelligence, UT Austin</p>
+
+  <div class="reports">
+
+    <!-- Report 1 -->
+    <div class="card">
+      <p class="card-number">01</p>
+      <h2>Vision-Based Ice Hockey Agent in PySuperTuxKart</h2>
+      <p>
+        Designed and trained an autonomous agent to play ice hockey in the PySuperTuxKart game environment using only raw gameplay images — no access to ground-truth game state. A Fully Convolutional Network (FCN) detects the puck's location, which drives a custom controller for real-time kart steering.
+      </p>
+      <div class="tags">
+        <span class="tag">Computer Vision</span>
+        <span class="tag">FCN</span>
+        <span class="tag">Reinforcement Learning</span>
+        <span class="tag">PyTorch</span>
+        <span class="tag">Game AI</span>
+      </div>
+      <div class="card-links">
+        <a href="vision-based-ice-hockey-agent.pdf" target="_blank">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+          Read Report
+        </a>
+      </div>
+    </div>
+
+    <!-- Report 2 -->
+    <div class="card">
+      <p class="card-number">02</p>
+      <h2>Sentiment Analysis with BERT vs. Logistic Regression on IMDb Reviews</h2>
+      <p>
+        Compared a fine-tuned BERT model against a logistic regression baseline for binary sentiment classification on the IMDb movie reviews dataset. Demonstrated the performance advantages of transformer-based transfer learning over traditional ML for natural language tasks.
+      </p>
+      <div class="tags">
+        <span class="tag">NLP</span>
+        <span class="tag">BERT</span>
+        <span class="tag">Transfer Learning</span>
+        <span class="tag">Sentiment Analysis</span>
+        <span class="tag">Hugging Face</span>
+      </div>
+      <div class="card-links">
+        <a href="bert-sentiment-analysis-imdb.pdf" target="_blank">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+          Read Report
+        </a>
+      </div>
+    </div>
+
+    <!-- Report 3 -->
+    <div class="card">
+      <p class="card-number">03</p>
+      <h2>Agentic AI for Healthcare Intake with Human-in-the-Loop Control</h2>
+      <p>
+        Designed a production-oriented agentic AI system for patient intake, combining LLM-driven conversational flows with classification and a governed Human-in-the-Loop (HITL) control layer. Addresses context window limitations in multi-turn healthcare dialogues and ensures clinically appropriate escalation.
+      </p>
+      <div class="tags">
+        <span class="tag">Agentic AI</span>
+        <span class="tag">LLMs</span>
+        <span class="tag">HITL</span>
+        <span class="tag">Healthcare AI</span>
+        <span class="tag">Classification</span>
+      </div>
+      <div class="card-links">
+        <a href="agentic-ai-healthcare-intake-hitl.pdf" target="_blank">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+          Read Report
+        </a>
+        <a href="agentic-ai-healthcare-intake-hitl-slides.pdf" target="_blank">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+          View Slides
+        </a>
+      </div>
+    </div>
+
+    <!-- Report 4 -->
+    <div class="card">
+      <p class="card-number">04</p>
+      <h2>Improving Negation Robustness in NLI via Data Augmentation and Oversampling</h2>
+      <p>
+        Diagnosed a systematic negation bias in an ELECTRA-based Natural Language Inference classifier on SNLI, where the model over-predicted contradiction based on surface negation markers. Introduced targeted data augmentation and an oversampling strategy that raised negation-slice accuracy from 80.0% to 84.3% with minimal impact on overall performance.
+      </p>
+      <div class="tags">
+        <span class="tag">NLI</span>
+        <span class="tag">ELECTRA</span>
+        <span class="tag">Data Augmentation</span>
+        <span class="tag">Model Robustness</span>
+        <span class="tag">SNLI</span>
+      </div>
+      <div class="card-links">
+        <a href="negation-robustness-nli-data-augmentation.pdf" target="_blank">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+          Read Report
+        </a>
+      </div>
+    </div>
+
+  </div>
+</main>
+
+<footer>
+  © 2025 Khurram Rafique · Seattle, WA
+</footer>
+
+</body>
+</html>
