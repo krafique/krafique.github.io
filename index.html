@@ -31,7 +31,7 @@
     header {
       max-width: 760px;
       margin: 0 auto;
-      padding: 80px 32px 56px;
+      padding: 52px 32px 56px;
       border-bottom: 1px solid var(--border);
       animation: fadeUp 0.7s ease both;
     }
@@ -209,22 +209,48 @@
     .card:nth-child(4) { animation-delay: 0.26s; }
     .card:nth-child(5) { animation-delay: 0.33s; }
 
+    /* ── Nav ── */
+    nav {
+      max-width: 760px;
+      margin: 0 auto;
+      padding: 28px 32px 0;
+      display: flex;
+      gap: 28px;
+      align-items: center;
+    }
+
+    nav a {
+      font-size: 12px;
+      font-weight: 500;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--muted);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+
+    nav a:hover { color: var(--text); }
+    nav a.active { color: var(--text); border-bottom: 1px solid var(--text); padding-bottom: 2px; }
+
     @media (max-width: 600px) {
-      header, main { padding-left: 20px; padding-right: 20px; }
-      header { padding-top: 52px; }
+      nav, header, main { padding-left: 20px; padding-right: 20px; }
+      header { padding-top: 36px; }
       .card { padding: 24px; }
     }
   </style>
 </head>
 <body>
 
+<nav>
+  <a href="/" class="active">AI Research</a>
+  <a href="/work">Selected Work</a>
+</nav>
+
 <header>
   <p class="eyebrow">AI Research Portfolio</p>
   <h1>Khurram Rafique</h1>
   <p class="bio">
-    AI product executive and MIT Sloan MBA completing an MS in Artificial Intelligence at UT Austin.
-    20+ years building and commercializing AI-driven platforms across insurtech, mobile, XR, and media.
-    These reports reflect hands-on technical work at the intersection of my executive background and graduate AI research.
+    Most product and strategy executives direct AI teams. I also build. These reports are graduate research from my MS in Artificial Intelligence at UT Austin — hands-on technical work in computer vision, NLP, and agentic systems that directly informs how I think about AI product strategy, architecture, and commercialization.
   </p>
   <div class="links">
     <a href="https://www.linkedin.com/in/krafique" target="_blank">

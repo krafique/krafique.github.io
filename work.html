@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Selected Work — Khurram Rafique</title>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg: #f9f9f7;
+      --surface: #ffffff;
+      --text: #1a1a1a;
+      --muted: #6b6b6b;
+      --border: #e8e8e4;
+      --tag-bg: #f0f0ec;
+    }
+
+    body {
+      font-family: 'DM Sans', sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      font-weight: 300;
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* ── Nav ── */
+    nav {
+      max-width: 760px;
+      margin: 0 auto;
+      padding: 28px 32px 0;
+      display: flex;
+      gap: 28px;
+      align-items: center;
+    }
+
+    nav a {
+      font-size: 12px;
+      font-weight: 500;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--muted);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+
+    nav a:hover { color: var(--text); }
+    nav a.active { color: var(--text); border-bottom: 1px solid var(--text); padding-bottom: 2px; }
+
+    /* ── Header ── */
+    header {
+      max-width: 760px;
+      margin: 0 auto;
+      padding: 52px 32px 48px;
+      border-bottom: 1px solid var(--border);
+      animation: fadeUp 0.7s ease both;
+    }
+
+    .eyebrow {
+      font-size: 11px;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: 20px;
+    }
+
+    h1 {
+      font-family: 'DM Serif Display', serif;
+      font-size: clamp(2.2rem, 5vw, 3.2rem);
+      font-weight: 400;
+      line-height: 1.15;
+      letter-spacing: -0.01em;
+      margin-bottom: 20px;
+    }
+
+    .bio {
+      font-size: 1rem;
+      color: var(--muted);
+      max-width: 560px;
+      line-height: 1.75;
+    }
+
+    /* ── Main ── */
+    main {
+      max-width: 760px;
+      margin: 0 auto;
+      padding: 64px 32px 120px;
+    }
+
+    /* ── Company Section ── */
+    .company {
+      margin-bottom: 64px;
+      animation: fadeUp 0.6s ease both;
+    }
+
+    .company:nth-child(1) { animation-delay: 0.05s; }
+    .company:nth-child(2) { animation-delay: 0.12s; }
+    .company:nth-child(3) { animation-delay: 0.19s; }
+    .company:nth-child(4) { animation-delay: 0.26s; }
+
+    .company-header {
+      display: flex;
+      align-items: baseline;
+      gap: 16px;
+      margin-bottom: 6px;
+      padding-bottom: 14px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .company-name {
+      font-family: 'DM Serif Display', serif;
+      font-size: 1.3rem;
+      font-weight: 400;
+      letter-spacing: -0.01em;
+    }
+
+    .company-meta {
+      font-size: 11px;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+
+    .company-desc {
+      font-size: 0.9rem;
+      color: var(--muted);
+      line-height: 1.7;
+      margin-top: 12px;
+      margin-bottom: 24px;
+      max-width: 560px;
+    }
+
+    /* ── Work Items ── */
+    .work-list {
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+    }
+
+    .work-item {
+      display: flex;
+      align-items: baseline;
+      justify-content: space-between;
+      padding: 14px 0;
+      border-bottom: 1px solid var(--border);
+      gap: 16px;
+    }
+
+    .work-item:last-child { border-bottom: none; }
+
+    .work-left {
+      display: flex;
+      align-items: baseline;
+      gap: 12px;
+      flex: 1;
+      min-width: 0;
+    }
+
+    .work-type {
+      font-size: 10px;
+      font-weight: 500;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--muted);
+      background: var(--tag-bg);
+      padding: 3px 8px;
+      border-radius: 100px;
+      white-space: nowrap;
+      flex-shrink: 0;
+    }
+
+    .work-title {
+      font-size: 0.9rem;
+      color: var(--text);
+      font-weight: 400;
+      line-height: 1.4;
+    }
+
+    .work-link {
+      font-size: 11px;
+      font-weight: 500;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: var(--muted);
+      text-decoration: none;
+      white-space: nowrap;
+      flex-shrink: 0;
+      display: flex;
+      align-items: center;
+      gap: 4px;
+      transition: color 0.2s;
+    }
+
+    .work-link:hover { color: var(--text); }
+
+    .work-link svg {
+      width: 11px;
+      height: 11px;
+    }
+
+    /* ── Footer ── */
+    footer {
+      text-align: center;
+      padding: 40px 32px;
+      font-size: 12px;
+      color: var(--muted);
+      border-top: 1px solid var(--border);
+    }
+
+    /* ── Animation ── */
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(18px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    @media (max-width: 600px) {
+      nav, header, main { padding-left: 20px; padding-right: 20px; }
+      header { padding-top: 36px; }
+      .work-item { flex-direction: column; gap: 8px; }
+      .company-header { flex-direction: column; gap: 4px; }
+    }
+  </style>
+</head>
+<body>
+
+<nav>
+  <a href="/">AI Research</a>
+  <a href="/work" class="active">Selected Work</a>
+</nav>
+
+<header>
+  <p class="eyebrow">GTM & Marketing</p>
+  <h1>Selected Work</h1>
+  <p class="bio">
+    A cross-section of GTM, product marketing, and commercialization work across a 20-year career spanning mobile, XR, AI, and insurtech. These are representative samples — not a complete record.
+  </p>
+</header>
+
+<main>
+
+  <!-- Samsung -->
+  <div class="company">
+    <div class="company-header">
+      <span class="company-name">Samsung Electronics America</span>
+      <span class="company-meta">2011 – 2016</span>
+    </div>
+    <p class="company-desc">
+      Part of a $1.5B marketing organization. Led integrated campaigns and product launches for Samsung's U.S. mobile portfolio, including Samsung Pay and Galaxy flagship devices. Operated as Chief of Staff to the SVP of Enterprise and led multicultural marketing strategy.
+    </p>
+    <div class="work-list">
+      <div class="work-item">
+        <div class="work-left">
+          <span class="work-type">TV Ad</span>
+          <span class="work-title">Samsung Pay U.S. Launch Campaign</span>
+        </div>
+        <a class="work-link" href="https://youtu.be/rwkvNJZPmPE?si=kLMSQXx3DG0stogK" target="_blank">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+          View
+        </a>
+      </div>
+      <div class="work-item">
+        <div class="work-left">
+          <span class="work-type">Press Release</span>
+          <span class="work-title">Samsung Pay U.S. Launch — TechCrunch</span>
+        </div>
+        <a class="work-link" href="https://techcrunch.com/2015/08/13/samsung-launches-samsung-pay-in-the-u-s/" target="_blank">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+          View
+        </a>
+      </div>
+      <div class="work-item">
+        <div class="work-left">
+          <span class="work-type">Blog Post</span>
+          <span class="work-title">Enabling Home Healthcare — Samsung Insights</span>
+        </div>
+        <a class="work-link" href="https://insights.samsung.com/2015/05/11/enabling-home-healthcare-how-mobile-technology-empowers-a-growing-industry-white-paper/" target="_blank">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+          View
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Nokia -->
+  <div class="company">
+    <div class="company-header">
+      <span class="company-name">Nokia</span>
+      <span class="company-meta">2016 – 2017</span>
+    </div>
+    <p class="company-desc">
+      Led global go-to-market strategy for the Nokia OZO VR platform — spanning the OZO camera, post-production tools, and developer SDK. Drove launches across China, North America, and Europe, exceeding first-year sales targets by 130%.
+    </p>
+    <div class="work-list">
+      <div class="work-item">
+        <div class="work-left">
+          <span class="work-type">Press Coverage</span>
+          <span class="work-title">Nokia OZO China Launch — TechCrunch</span>
+        </div>
+        <a class="work-link" href="https://techcrunch.com/2016/08/18/nokias-ozo-vr-camera-now-more-affordable-heading-to-china/" target="_blank">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+          View
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Xperi -->
+  <div class="company">
+    <div class="company-header">
+      <span class="company-name">Xperi</span>
+      <span class="company-meta">2018 – 2020</span>
+    </div>
+    <p class="company-desc">
+      Led global commercialization for Xperi's AI and computer vision platforms, including CNN-based facial recognition, IMAX Enhanced, DTS Sound, and in-cabin automotive AI. Drove OEM partnerships with Apple, LG, Huawei, Mercedes-Benz, Disney+, and Sony.
+    </p>
+    <div class="work-list">
+      <div class="work-item">
+        <div class="work-left">
+          <span class="work-type">Website</span>
+          <span class="work-title">IMAX Enhanced — Platform Homepage</span>
+        </div>
+        <a class="work-link" href="https://www.imaxenhanced.com/" target="_blank">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+          View
+        </a>
+      </div>
+      <div class="work-item">
+        <div class="work-left">
+          <span class="work-type">Press Coverage</span>
+          <span class="work-title">LG G8 FaceSafe — 3D Facial Recognition Launch</span>
+        </div>
+        <a class="work-link" href="https://techthelead.com/lg-g8-facesafe-an-unprecedented-face-recognition-for-an-android-phone/" target="_blank">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+          View
+        </a>
+      </div>
+      <div class="work-item">
+        <div class="work-left">
+          <span class="work-type">Product Page</span>
+          <span class="work-title">DTS Sound Unbound — Microsoft Store</span>
+        </div>
+        <a class="work-link" href="https://apps.microsoft.com/store/detail/dts-sound-unbound/9PJ0NKL8MCSJ?hl=en-us&gl=us&rtc=1" target="_blank">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+          View
+        </a>
+      </div>
+      <div class="work-item">
+        <div class="work-left">
+          <span class="work-type">Press Release</span>
+          <span class="work-title">DTS Connected Radio — Mercedes-Benz Partnership</span>
+        </div>
+        <a class="work-link" href="https://investor.xperi.com/news/news-details/2020/DTS-Connected-Radio-Launches-in-Major-Global-Car-Platform-Redefines-In-Vehicle-Listening-Experience/default.aspx" target="_blank">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+          View
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Neighbors -->
+  <div class="company">
+    <div class="company-header">
+      <span class="company-name">Neighbors</span>
+      <span class="company-meta">2020 – Present</span>
+    </div>
+    <p class="company-desc">
+      Founded and led Neighbors as an AI-native product protection platform. Owned all GTM strategy, brand development, and sales collateral from zero — alongside building and deploying the AI systems.
+    </p>
+    <div class="work-list">
+      <div class="work-item">
+        <div class="work-left">
+          <span class="work-type">Website</span>
+          <span class="work-title">Neighbors.ai — Company Homepage</span>
+        </div>
+        <a class="work-link" href="https://www.neighbors.ai" target="_blank">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+          View
+        </a>
+      </div>
+      <div class="work-item">
+        <div class="work-left">
+          <span class="work-type">Press Release</span>
+          <span class="work-title">Neighbors.ai — Company Announcement</span>
+        </div>
+        <a class="work-link" href="https://tinyurl.com/neighbors-ai" target="_blank">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+          View
+        </a>
+      </div>
+      <div class="work-item">
+        <div class="work-left">
+          <span class="work-type">Sales Deck</span>
+          <span class="work-title">Carrier Sales Deck</span>
+        </div>
+        <a class="work-link" href="Neighbors Carrier Intro.pdf" target="_blank">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+          View
+        </a>
+      </div>
+      <div class="work-item">
+        <div class="work-left">
+          <span class="work-type">One Pager</span>
+          <span class="work-title">Partner Marketing Collateral — SMART Care</span>
+        </div>
+        <a class="work-link" href="SMART care intro.pdf" target="_blank">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+          View
+        </a>
+      </div>
+      <div class="work-item">
+        <div class="work-left">
+          <span class="work-type">Ad Creative</span>
+          <span class="work-title">Online Display Ads — Full Set (5 formats)</span>
+        </div>
+        <a class="work-link" href="Wide Skyscraper.png" target="_blank">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+          View
+        </a>
+      </div>
+    </div>
+  </div>
+
+</main>
+
+<footer>
+  © 2025 Khurram Rafique · Seattle, WA
+</footer>
+
+</body>
+</html>
